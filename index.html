@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+</head>
+<style>
+    input{font-family: Verdana;text-align: center; font-family: Verdana; font-size: large; border-radius: 7px;}
+    label{font-family: Verdana; font-weight: bolder; font-size: 22PX;}
+    button{background-color: rgb(20, 122, 0);font-family: Verdana;font-weight: bolder; font-size: 19px;color: white; border-radius: 10px; padding: 6px;}
+    p{font-family: Verdana;font-weight: bolder;}
+    #resultado,#resultado1,#resultado2{color: rgb(2, 2, 211);}
+    table{border-radius: 10px;}
+    h2{font-family: Verdana;}
+    th{padding: 7px;}
+</style>
+<body>
+    <table border="2"><tr><th style="background-color: yellow;">
+    <div style="font-family: Verdana; font-size: 45px; margin-left: 6%; font-weight: bolder;">ACE  ITINGA/MA</div>
+    <h2>CALCULADORA DE LITROS</h2>
+    </table></th></tr>
+<div>
+    <table border="2" style="background-color: rgb(228, 228, 228);"><tr>
+    <th><h1 style="font-family: Verdana; font-size: 25PX; color: blue; background-color: white; border-radius: 10px; padding: 5px;">DEPÓSITOS CILÍNDRICOS:</h1>
+    <label for="raio1">Diâmetro (dm):</label><br>
+    <input type="number" min="0" max="100" name="raio1" id="raio1"><br><br>
+    <label for="altura">Altura (dm):</label><br>
+    <input type="number" min="0" max="100" name="altura" id="altura"><br><br>
+    <button onclick="soma()">Resultado</button>
+    <p style="font-size: 20px;" id="resultado"></p>
+    <label style="background-color: white; padding: 2px; border-radius: 5px;" for="litros">Informe a quantidade de água:</label><br><br>
+    <input type="number"  min="0" max="1000" id="litros" required><br><br>
+    <button onclick="calcularLarvicida()">Calcular</button><br><br>
+    <button style="background-color: red; font-size: 16px;" onclick="zerar()">LIMPAR</button><br>
+    <p id="resultado"></p></th></tr>
+</div> 
+<div>
+    <tr>
+     <th><h1 style="font-family: Verdana; font-size: 25px; color: blue; background-color: white; border-radius: 10px; padding: 5px;">DEPÓSITOS RETANGULARES:</h1>
+    <label for="comprimento">Comprimento (dm):</label><br>
+    <input type="number" min="0" max="100" name="comprimento" id="comprimento"><br><br>
+    <label for="largura">Largura (dm):</label><br>
+    <input type="number" min="0" max="100" name="largura" id="largura"><br><br>
+    <label for="altura2">Altura (dm):</label><br>
+    <input type="number" min="0" max="100" name="altura2" id="altura2"><br>
+    <p><button onclick="soma1()">Resultado</button></p>
+    <p style="font-size: 20px;" id="resultado1"></p>
+    <label style="background-color: white; padding: 2px; border-radius: 5px;" for="litros">Informe a quantidade de água:</label><br><br>
+    <input type="number"  min="0" max="1000" id="litros1" required><br><br>
+    <button onclick="calcularLarvicida1()">Calcular</button><br><br>
+    <button style="background-color: red; font-size: 16px;" onclick="zerar1()">LIMPAR</button><br>
+    <p id="resultado1"></p></th></tr>
+    
+</div>
+<div>
+    <th><h1 style="font-family: Verdana; font-size: 25px;color: blue; background-color: white; border-radius: 10px; padding: 5px;">DEPÓSITOS TRIANGULARES:</h1>
+    <label for="base">Base (dm):</label><br>
+    <input type="number" min="0" max="100" name="base" id="base"><br><br>
+    <label for="largura">Largura (dm):</label><br>
+    <input type="number" min="0" max="100" name="largura" id="largura1"><br><br>
+    <label for="altura">Altura (dm):</label><br>
+    <input type="number" min="0" max="100" name="altura" id="altura1"><br><br>
+    <button onclick="soma2()">Resultado</button>
+    <p style="font-size: 20px;" id="resultado2"></p>
+    <label style="background-color: white; padding: 2px; border-radius: 5px;" for="litros">Informe a quantidade de água:</label><br><br>
+    <input type="number"  min="0" max="1000" id="litros2" required><br><br>
+    <button onclick="calcularLarvicida2()">Calcular</button><br><br>
+    <button style="background-color: red; font-size: 16px;" onclick="zerar2()">LIMPAR</button><br>
+    <p id="resultado2"></p></th></tr>
+</div>
+    </table>
+    <script>
+        function calcularLarvicida() {
+            const litros = parseFloat(document.getElementById('litros').value);
+            const larvicida = litros / 100;
+            document.getElementById('resultado').innerText = `Qtd. de larvicida: ${larvicida} g.`;
+        }
+    </script>
+    <script>
+        function calcularLarvicida1() {
+            const litros1 = parseFloat(document.getElementById('litros1').value);
+            const larvicida = litros1 / 100;
+            document.getElementById('resultado1').innerText = `Qtd. de larvicida: ${larvicida} g.`;
+        }
+    </script>
+    <script>
+        function calcularLarvicida2() {
+            const litros2 = parseFloat(document.getElementById('litros2').value);
+            const larvicida = litros2 / 100;
+            document.getElementById('resultado2').innerText = `Qtd. de larvicida: ${larvicida} g.`;
+        }
+    </script>
+<div>
+    <script> 
+        function  soma(){
+            let raio1 = document.getElementById("raio1").value;
+            let altura = document.getElementById("altura").value;
+            let soma = raio1*raio1*(altura *0.8)
+            document.getElementById("resultado").innerHTML = "Litros:"+soma}
+    </script>
+</div>
+<div>
+    <script>
+        function soma1(){
+            let comprimento = document.getElementById("comprimento").value;
+            let largura = document.getElementById("largura").value;
+            let altura2 = document.getElementById("altura2").value;
+            let soma1 = comprimento*largura*altura2;
+            document.getElementById("resultado1").innerHTML = "Litros:" +soma1};
+     </script>
+</div>
+<div>
+    <script>
+        function soma2(){
+            let base = document.getElementById("base").value;
+            let largura1 = document.getElementById("largura1").value;
+            let altura1 = document.getElementById("altura1").value;
+            let soma2 = base*largura1*(altura1 /2);
+            document.getElementById("resultado2").innerHTML = "Litros:" +soma2};
+    </script>
+</div>
+<div>
+    <script>
+        function zerar(){
+     document.getElementById("resultado",).innerHTML = "";
+            document.getElementById("raio1").value = "";
+            document.getElementById("altura").value = "";
+            document.getElementById("litros").value = "";}
+    </script>
+</div>
+<div>
+    <script>
+        function zerar1(){
+     document.getElementById("resultado1").innerHTML = "";
+     document.getElementById("comprimento").value = "";
+     document.getElementById("largura").value = "";
+     document.getElementById("altura2").value = "";
+     document.getElementById("litros1").value = "";}
+    </script>
+</div>
+<div>
+    <script>
+        function zerar2(){
+     document.getElementById("resultado2").innerHTML = "";
+     document.getElementById("base").value = "";
+     document.getElementById("largura1").value = "";
+     document.getElementById("altura1").value = "";
+     document.getElementById("litros2").value = "";}
+    </script>
+</div>
+<div>
+    <a style="color: blue; font-family: Verdana; font-size: 120%; margin-left: 7%; text-align: center;" href="index.page1.html"><b>VOLTAR PARA O INICIO</b></a>
+    <br><br><b style="font-family: Verdana;" >Criado por: <br> Carlos de Freitas Rocha (ACE)</b>
+</div>    
+</body>
+</html>
